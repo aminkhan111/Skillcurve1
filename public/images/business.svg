@@ -1,0 +1,13 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F3F4F6"/>
+  <path d="M120 70H280V170C280 174.418 276.418 178 272 178H128C123.582 178 120 174.418 120 170V70Z" fill="#0052CC" opacity="0.2"/>
+  <path d="M130 90V160H270V90H130Z" fill="white" stroke="#0052CC" stroke-width="2"/>
+  <path d="M150 140L170 120L190 140L220 110L250 140" stroke="#FF6B35" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="170" cy="120" r="5" fill="#FF6B35"/>
+  <circle cx="190" cy="140" r="5" fill="#FF6B35"/>
+  <circle cx="220" cy="110" r="5" fill="#FF6B35"/>
+  <circle cx="250" cy="140" r="5" fill="#FF6B35"/>
+  <line x1="140" y1="150" x2="260" y2="150" stroke="#0052CC" stroke-width="2"/>
+  <text x="130" y="210" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#0052CC">MBA: Business Strategy</text>
+  <text x="160" y="235" font-family="Arial, sans-serif" font-size="16" fill="#64748B">and Management</text>
+</svg> 
