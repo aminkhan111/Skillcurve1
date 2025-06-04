@@ -209,6 +209,8 @@ const PopupForm = () => {
                           name="phoneNumber"
                           value={formData.phoneNumber}
                           onChange={handleChange}
+                          pattern="[0-9]{10}"
+                          title="Please enter exactly 10 digits"
                         />
                       </div>
                       <div>
@@ -312,4 +314,4 @@ const PopupForm = () => {
   );
 };
 
-export default PopupForm; 
+export default PopupForm;  
