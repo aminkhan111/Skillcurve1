@@ -36,7 +36,7 @@ const WhatsAppButton = () => {
   const socialLinks = [
     {
       Icon: FaWhatsapp,
-      href: 'https://wa.me/9901937926',
+      href: encodeURI('https://api.whatsapp.com/send?phone=919901937926&text=Hi%20there%2C%20can%20you%20share%20more%20info%20on%20this%3F'),
       bgColor: 'bg-green-500',
       hoverBgColor: 'hover:bg-green-600',
       ariaLabel: 'Chat on WhatsApp',
