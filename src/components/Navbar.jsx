@@ -26,7 +26,7 @@ const DesktopDropdown = ({ title, isOpen, toggleDropdown, items, handleNavigatio
       </button>
       
       {isOpen && (
-        <div className="absolute z-10 left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <div className="absolute z-50 left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1" role="menu" aria-orientation="vertical">
             {items.map((item, index) => (
               <div 
