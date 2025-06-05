@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CallToActionSection from "@/components/home/CTASection";
 import UniversityLogosSection from "@/components/home/UniversityLogosSection";
 import HowItWorksSection from "@/components/home/HowItWorksSection";
+ 
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
+      
       <ServicesSection />
       <HowItWorksSection />
       <UniversityLogosSection />

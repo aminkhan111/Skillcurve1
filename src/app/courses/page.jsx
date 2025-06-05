@@ -204,7 +204,7 @@ export default function CoursesPage() {
   };
 
   return (
-    <main className="bg-slate-50">
+    <main className="bg-slate-50 overflow-x-hidden max-w-[100vw]">
       {/* Hero Section - Enhanced with more visual elements and better mobile responsiveness */}
       <section className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-16 md:py-24 lg:py-32 overflow-hidden px-4 md:px-0">
         {/* Animated floating shapes */}
@@ -241,8 +241,8 @@ export default function CoursesPage() {
           <svg className="absolute right-0 top-0 h-full w-1/2 transform translate-x-1/3 text-white/5" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <polygon points="0,0 100,0 50,100 0,100" />
           </svg>
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full">
               <path fill="#f8fafc" fillOpacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,218.7C672,235,768,245,864,234.7C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
           </div>
@@ -291,6 +291,14 @@ export default function CoursesPage() {
                 className="bg-gradient-to-r from-orange-400 to-orange-600 text-white py-3 px-6 sm:px-8 rounded-md font-medium text-base sm:text-lg shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  // Store in localStorage that we're manually showing the popup
+                  localStorage.setItem("popupShown", "true");
+                  
+                  // Dispatch a custom event that the PopupForm component will listen for
+                  const event = new Event("showConsultationPopup");
+                  window.dispatchEvent(event);
+                }}
               >
                 Explore Your Future
               </motion.button>
@@ -432,7 +440,7 @@ export default function CoursesPage() {
                     </div>
                   </div>
                   
-                  <Link href={`/courses/${course.id}`}>
+                  <Link href="/coming-soon">
                     <motion.button 
                       className="w-full py-2.5 sm:py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-md transition-all font-medium relative overflow-hidden group-hover:shadow-lg text-sm sm:text-base"
                       whileHover={{ 
@@ -507,10 +515,18 @@ export default function CoursesPage() {
                   whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
                   whileTap={{ scale: 0.98 }}
                   className="relative inline-block group"
+                  onClick={() => {
+                    // Store in localStorage that we're manually showing the popup
+                    localStorage.setItem("popupShown", "true");
+                    
+                    // Dispatch a custom event that the PopupForm component will listen for
+                    const event = new Event("showConsultationPopup");
+                    window.dispatchEvent(event);
+                  }}
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-orange-500 rounded-md blur-md opacity-70 transform transition-transform group-hover:scale-105"></span>
                   <span className="relative block bg-gradient-to-r from-blue-600 to-orange-500 hover:from-orange-500 hover:to-blue-600 text-white py-2 px-6 rounded-md font-medium transition-all duration-300">
-                    Join Waitlist
+                    Get Pre-Consultation
                   </span>
                 </motion.button>
               </div>
@@ -636,23 +652,33 @@ export default function CoursesPage() {
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2.5 sm:py-3 px-6 sm:px-8 rounded-md font-medium text-base sm:text-lg transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  // Store in localStorage that we're manually showing the popup
+                  localStorage.setItem("popupShown", "true");
+                  
+                  // Dispatch a custom event that the PopupForm component will listen for
+                  const event = new Event("showConsultationPopup");
+                  window.dispatchEvent(event);
+                }}
               >
                 Apply Now
               </motion.button>
-              <motion.button 
-                className="bg-transparent border-2 border-white text-white py-2.5 sm:py-3 px-6 sm:px-8 rounded-md font-medium text-base sm:text-lg transition-all duration-300 hover:bg-white/10 hover:shadow-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Download Brochure
-              </motion.button>
+              <Link href="/coming-soon">
+                <motion.button 
+                  className="bg-transparent border-2 border-white text-white py-2.5 sm:py-3 px-6 sm:px-8 rounded-md font-medium text-base sm:text-lg transition-all duration-300 hover:bg-white/10 hover:shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Download Brochure
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* FAQ Section - Improved for mobile */}
-      <section className="py-10 md:py-16 bg-slate-50 relative">
+      <section className="py-10 md:py-16 bg-slate-50 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute -top-20 -right-20 w-36 md:w-64 h-36 md:h-64 bg-blue-100 rounded-full opacity-60 blur-2xl"></div>
         <div className="absolute -bottom-20 -left-20 w-36 md:w-64 h-36 md:h-64 bg-orange-100 rounded-full opacity-60 blur-2xl"></div>

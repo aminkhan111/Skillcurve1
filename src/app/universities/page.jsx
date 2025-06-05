@@ -345,7 +345,7 @@ export default function UniversitiesPage() {
                     </div>
                   </div>
                   
-                  <Link href={`/universities/${university.id}`}>
+                  <Link href="/coming-soon">
                     <button className="w-full py-2 px-4 bg-[#0052CC] text-white rounded-md hover:bg-[#003D99] transition-colors font-medium">
                       View University
                     </button>

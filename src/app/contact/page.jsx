@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn, slideInLeft, slideInRight } from "@/components/utils/animations";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -128,7 +129,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-2">Email Us</h3>
               <p className="text-gray-500 mb-4">Our friendly team is here to help</p>
-              <a href="mailto:info@skillcurve.edu" className="text-[#0052CC] font-medium hover:underline text-lg">info@skillcurve.edu</a>
+              <a href="mailto:info@skillcurve.in" className="text-[#0052CC] font-medium hover:underline text-lg">info@skillcurve.in</a>
             </motion.div>
             
             {/* Phone Card */}
@@ -143,7 +144,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-2">Call Us</h3>
               <p className="text-gray-500 mb-4">Mon-Fri from 8am to 5pm</p>
-              <a href="tel:+1-555-123-4567" className="text-[#FF6B00] font-medium hover:underline text-lg">+1 (555) 123-4567</a>
+              <a href="tel:+919901937926" className="text-[#FF6B00] font-medium hover:underline text-lg">+91 99019 37926</a>
             </motion.div>
             
             {/* Visit Card */}
@@ -159,7 +160,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-2">Visit Us</h3>
               <p className="text-gray-500 mb-4">Come say hello at our office</p>
-              <p className="text-indigo-600 font-medium text-lg">123 Education Street, Learning City, 10001</p>
+              <p className="text-indigo-600 font-medium text-lg">9th Main Rd, Sector 7, HSR Layout, Bengaluru, Karnataka 560102</p>
             </motion.div>
           </motion.div>
         </div>
@@ -206,7 +207,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-transparent transition"
-                        placeholder="John Doe"
+                        placeholder=""
                       />
                     </div>
                     <div>
@@ -219,7 +220,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-transparent transition"
-                        placeholder="john@example.com"
+                        placeholder=""
                       />
                     </div>
                   </div>
@@ -234,7 +235,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-transparent transition"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder=""
                       />
                     </div>
                     <div>
@@ -267,7 +268,7 @@ export default function ContactPage() {
                       required
                       rows={5}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-transparent transition"
-                      placeholder="How can we help you?"
+                      placeholder=""
                     />
                   </div>
                   
@@ -311,7 +312,7 @@ export default function ContactPage() {
                         </svg>
                       </div>
                       <p className="text-gray-800 font-medium">Interactive Map</p>
-                      <p className="text-sm text-gray-600">123 Education Street, Learning City</p>
+                      <p className="text-sm text-gray-600">9th Main Rd, Sector 7, HSR Layout, Bengaluru, Karnataka 560102</p>
                     </div>
                   </div>
                 </div>
@@ -330,7 +331,7 @@ export default function ContactPage() {
                       </div>
                       <div className="ml-4">
                         <p className="text-gray-700 font-medium">Address</p>
-                        <p className="text-gray-600">123 Education Street, Learning City, 10001</p>
+                        <p className="text-gray-600">9th Main Rd, Sector 7, HSR Layout, Bengaluru, Karnataka 560102</p>
                       </div>
                     </div>
                     
@@ -342,7 +343,7 @@ export default function ContactPage() {
                       </div>
                       <div className="ml-4">
                         <p className="text-gray-700 font-medium">Email</p>
-                        <p className="text-gray-600">info@skillcurve.edu</p>
+                        <p className="text-gray-600">info@skillcurve.in</p>
                       </div>
                     </div>
                     
@@ -354,7 +355,7 @@ export default function ContactPage() {
                       </div>
                       <div className="ml-4">
                         <p className="text-gray-700 font-medium">Phone</p>
-                        <p className="text-gray-600">+1 (555) 123-4567</p>
+                        <p className="text-gray-600">+91 99019 37926</p>
                       </div>
                     </div>
                   </div>
@@ -472,16 +473,27 @@ export default function ContactPage() {
                   className="bg-gradient-to-r from-[#0052CC] to-[#0066FF] text-white py-4 px-8 rounded-lg font-medium text-lg transition-all duration-300 hover:shadow-xl shadow-lg shadow-blue-200/50"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    // Store in localStorage that we're manually showing the popup
+                    localStorage.setItem("popupShown", "true");
+                    
+                    // Dispatch a custom event that the PopupForm component will listen for
+                    const event = new Event("showConsultationPopup");
+                    window.dispatchEvent(event);
+                  }}
                 >
                   Schedule A Free Consultation
                 </motion.button>
-                <motion.button 
-                  className="bg-gradient-to-r from-[#FF6B00] to-[#FF9D00] text-white py-4 px-8 rounded-lg font-medium text-lg transition-all duration-300 hover:shadow-xl shadow-lg shadow-orange-200/50"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Browse Our Courses
-                </motion.button>
+                
+                <Link href="/courses">
+                  <motion.button 
+                    className="bg-gradient-to-r from-[#FF6B00] to-[#FF9D00] text-white py-4 px-8 rounded-lg font-medium text-lg transition-all duration-300 hover:shadow-xl shadow-lg shadow-orange-200/50"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Browse Our Courses
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </div>

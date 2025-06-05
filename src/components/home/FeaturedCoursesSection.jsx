@@ -404,7 +404,7 @@ export default function FeaturedCoursesSection() {
                         <span className="text-gray-700 text-sm">{course.instructor}</span>
                       </div>
                       
-                      <Link href={`/courses/${course.id}`}>
+                      <Link href="/coming-soon">
                         <span className="py-2 px-5 bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition-colors text-sm">
                           View Course
                         </span>
