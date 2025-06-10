@@ -148,7 +148,7 @@ const PopupForm = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div 
-              className="bg-white rounded-xl shadow-2xl overflow-hidden max-w-md w-full relative"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden max-w-md w-full relative"
               initial={{ scale: 0.9, y: 20, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -157,7 +157,7 @@ const PopupForm = () => {
               {/* Close button */}
               <button
                 aria-label="Close"
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors z-10"
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors z-10"
                 type="button"
                 onClick={closePopup}
               >
@@ -173,23 +173,23 @@ const PopupForm = () => {
               </div>
               
               {/* Form body */}
-              <div className="p-6">
+              <div className="p-6 dark:text-gray-100">
                 {isSubmitted ? (
                   <div className="text-center py-8">
-                    <div className="w-16 h-16 bg-green-100 rounded-full mx-auto flex items-center justify-center mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full mx-auto flex items-center justify-center mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600 dark:text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h4 className="text-xl font-semibold text-gray-800 mb-2">Thank You!</h4>
-                    <p className="text-gray-600">Our team will contact you shortly.</p>
+                    <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">Thank You!</h4>
+                    <p className="text-gray-600 dark:text-gray-300">Our team will contact you shortly.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Form fields */}
                     <div>
                       <input
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC]"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white dark:bg-gray-700 dark:text-white"
                         placeholder="Full Name*"
                         required
                         type="text"
@@ -202,7 +202,7 @@ const PopupForm = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <input
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC]"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white dark:bg-gray-700 dark:text-white"
                           placeholder="Phone Number*"
                           required
                           type="tel"
@@ -215,7 +215,7 @@ const PopupForm = () => {
                       </div>
                       <div>
                         <input
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC]"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white dark:bg-gray-700 dark:text-white"
                           placeholder="Email*"
                           required
                           type="email"
@@ -228,7 +228,7 @@ const PopupForm = () => {
                     
                     <div>
                       <select
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white dark:bg-gray-700 dark:text-white"
                         required
                         name="courseInterest"
                         value={formData.courseInterest}
@@ -247,7 +247,7 @@ const PopupForm = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white dark:bg-gray-700 dark:text-white"
                           name="educationLevel"
                           value={formData.educationLevel}
                           onChange={handleChange}
@@ -263,7 +263,7 @@ const PopupForm = () => {
                       </div>
                       <div>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white"
+                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0052CC] bg-white dark:bg-gray-700 dark:text-white"
                           name="startPreference"
                           value={formData.startPreference}
                           onChange={handleChange}
@@ -280,13 +280,13 @@ const PopupForm = () => {
                     </div>
                     
                     <div className="space-y-2 mt-2">
-                      <div className="flex items-center text-sm text-green-600">
+                      <div className="flex items-center text-sm text-green-600 dark:text-green-400">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         We protect your privacy and data
                       </div>
-                      <div className="flex items-center text-sm text-gray-600">
+                      <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
