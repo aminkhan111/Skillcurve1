@@ -22,10 +22,10 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-gray-900">
       <PopupForm />
       {/* Hero Section with Parallax */}
-      <section className="relative h-[70vh] overflow-hidden flex items-center">
+      <section className="relative h-[70vh] overflow-hidden flex items-start pt-20 md:pt-24">
         <div className="absolute inset-0 z-0">
           <Image 
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" 
@@ -78,7 +78,7 @@ export default function AboutUs() {
       </section>
 
       {/* Our Mission Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
@@ -113,12 +113,12 @@ export default function AboutUs() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 text-transparent bg-clip-text mb-6">Our Mission</h2>
+                <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 text-transparent bg-clip-text mb-6 dark:from-blue-400 dark:to-orange-400">Our Mission</h2>
                 <div className="w-16 h-1.5 bg-gradient-to-r from-blue-500 to-orange-500 mb-6 rounded-full"></div>
-                <p className="text-xl text-gray-700 mb-6">
+                <p className="text-xl text-gray-700 dark:text-gray-200 mb-6">
                   To make quality education, skill development, and career success a reality for every learner.
                 </p>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
                   Whether you're a student starting your academic journey, a professional aiming to upskill, 
                   or a career switcher seeking guidance—SkillCurve is your trusted partner.
                 </p>
@@ -139,10 +139,10 @@ export default function AboutUs() {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-200 rounded-full opacity-20 -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-200 dark:bg-blue-900 rounded-full opacity-20 translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-200 dark:bg-orange-900 rounded-full opacity-20 -translate-x-1/3 translate-y-1/3 blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
@@ -152,9 +152,9 @@ export default function AboutUs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 text-transparent bg-clip-text mb-4">Our Core Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 dark:from-blue-400 dark:to-orange-400 text-transparent bg-clip-text mb-4">Our Core Values</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               The principles that guide our approach to education and career development.
             </p>
           </motion.div>
@@ -168,51 +168,51 @@ export default function AboutUs() {
           >
             {/* Value 1 */}
             <motion.div 
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group"
+              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group"
               variants={cardVariants}
               whileHover="hover"
             >
-              <div className="bg-blue-500/10 p-3 w-16 h-16 rounded-full mb-6 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <div className="bg-blue-500/10 dark:bg-blue-500/30 p-3 w-16 h-16 rounded-full mb-6 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text group-hover:text-transparent transition-all duration-300">Accessibility</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-white group-hover:bg-gradient-to-r from-blue-600 to-orange-500 dark:from-blue-400 dark:to-orange-400 bg-clip-text group-hover:text-transparent transition-all duration-300">Accessibility</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 We believe quality education should be accessible to all. Our programs are designed to remove barriers and open doors.
               </p>
             </motion.div>
 
             {/* Value 2 */}
             <motion.div 
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group"
+              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group"
               variants={cardVariants}
               whileHover="hover"
             >
-              <div className="bg-orange-500/10 p-3 w-16 h-16 rounded-full mb-6 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+              <div className="bg-orange-500/10 dark:bg-orange-500/30 p-3 w-16 h-16 rounded-full mb-6 flex items-center justify-center text-orange-500 dark:text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text group-hover:text-transparent transition-all duration-300">Innovation</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-white group-hover:bg-gradient-to-r from-blue-600 to-orange-500 dark:from-blue-400 dark:to-orange-400 bg-clip-text group-hover:text-transparent transition-all duration-300">Innovation</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 We constantly evolve our approaches and technologies to deliver cutting-edge learning experiences and career solutions.
               </p>
             </motion.div>
 
             {/* Value 3 */}
             <motion.div 
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 group"
+              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group"
               variants={cardVariants}
               whileHover="hover"
             >
-              <div className="bg-blue-500/10 p-3 w-16 h-16 rounded-full mb-6 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <div className="bg-blue-500/10 dark:bg-blue-500/30 p-3 w-16 h-16 rounded-full mb-6 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text group-hover:text-transparent transition-all duration-300">Mentorship</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-white group-hover:bg-gradient-to-r from-blue-600 to-orange-500 dark:from-blue-400 dark:to-orange-400 bg-clip-text group-hover:text-transparent transition-all duration-300">Mentorship</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 We believe in personal guidance. Our industry experts and career mentors provide the support needed for success.
               </p>
             </motion.div>
@@ -221,7 +221,7 @@ export default function AboutUs() {
       </section>
 
       {/* Our Team */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -230,9 +230,9 @@ export default function AboutUs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 text-transparent bg-clip-text mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 dark:from-blue-400 dark:to-orange-400 text-transparent bg-clip-text mb-4">Meet Our Team</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-orange-500 mx-auto mb-6 rounded-full"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Led by founders with extensive experience in education and business.
             </p>
           </motion.div>
@@ -248,16 +248,16 @@ export default function AboutUs() {
             <motion.div 
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 group transition-all duration-300 hover:shadow-xl"
+              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 group transition-all duration-300 hover:shadow-xl"
             >
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                 <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center text-white text-3xl font-bold">
                   SB
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-800 group-hover:bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text group-hover:text-transparent mb-1 transition-all duration-300">Shahinul Barbhuiya</h3>
-                  <p className="text-orange-500 font-medium mb-4">Co-Founder & Chief Executive Officer (CEO)</p>
-                  <p className="text-gray-600">
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover:bg-gradient-to-r from-blue-600 to-orange-500 dark:from-blue-400 dark:to-orange-400 bg-clip-text group-hover:text-transparent mb-1 transition-all duration-300">Shahinul Barbhuiya</h3>
+                  <p className="text-orange-500 dark:text-orange-400 font-medium mb-4">Co-Founder & Chief Executive Officer (CEO)</p>
+                  <p className="text-gray-600 dark:text-gray-300">
                     A visionary leader with a background in education and product management, Shahinul oversees SkillCurve's strategic direction and growth, ensuring all decisions align with our core mission: empowering students and professionals with accessible, high-quality education and career support.
                   </p>
                 </div>
@@ -268,16 +268,16 @@ export default function AboutUs() {
             <motion.div 
               variants={cardVariants}
               whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 group transition-all duration-300 hover:shadow-xl"
+              className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 group transition-all duration-300 hover:shadow-xl"
             >
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                 <div className="w-32 h-32 bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl flex items-center justify-center text-white text-3xl font-bold">
                   BF
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-800 group-hover:bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text group-hover:text-transparent mb-1 transition-all duration-300">Baba Fareed</h3>
-                  <p className="text-blue-600 font-medium mb-4">Co-Founder & Chief Business Officer (CBO)</p>
-                  <p className="text-gray-600">
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover:bg-gradient-to-r from-blue-600 to-orange-500 dark:from-blue-400 dark:to-orange-400 bg-clip-text group-hover:text-transparent mb-1 transition-all duration-300">Baba Fareed</h3>
+                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-4">Co-Founder & Chief Business Officer (CBO)</p>
+                  <p className="text-gray-600 dark:text-gray-300">
                     With over 8 years of experience in the edtech industry, Baba has led admissions, sales, and student acquisition teams at top edtech companies. A former Inside Sales leader and entrepreneur, he drives growth and innovation in the online learning space at SkillCurve.
                   </p>
                 </div>
@@ -288,14 +288,14 @@ export default function AboutUs() {
       </section>
 
       {/* Coming Soon Section */}
-      <section className="py-12 md:py-16 bg-gray-50 relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-gradient-to-br from-[#0052CC]/10 to-[#FF6B00]/10 blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 rounded-full bg-gradient-to-br from-[#FF6B00]/10 to-[#0052CC]/10 blur-3xl"></div>
+        <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-gradient-to-br from-[#0052CC]/10 to-[#FF6B00]/10 dark:from-[#0052CC]/20 dark:to-[#FF6B00]/20 blur-3xl"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 rounded-full bg-gradient-to-br from-[#FF6B00]/10 to-[#0052CC]/10 dark:from-[#FF6B00]/20 dark:to-[#0052CC]/20 blur-3xl"></div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
-            className="bg-white/30 backdrop-blur-sm py-6 px-6 rounded-2xl border border-white/20 shadow-xl overflow-hidden relative"
+            className="bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm py-6 px-6 rounded-2xl border border-white/20 dark:border-gray-700/20 shadow-xl overflow-hidden relative"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -324,18 +324,18 @@ export default function AboutUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="inline-block mb-3 py-1 px-4 rounded-full bg-gradient-to-r from-[#0052CC]/10 to-[#FF6B00]/10 text-[#0052CC] text-xs font-semibold"
+                className="inline-block mb-3 py-1 px-4 rounded-full bg-gradient-to-r from-[#0052CC]/10 to-[#FF6B00]/10 dark:from-[#0052CC]/30 dark:to-[#FF6B00]/30 text-[#0052CC] dark:text-[#4D9CFF] text-xs font-semibold"
               >
                 COMING SOON
               </motion.div>
               
-              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B00] bg-clip-text text-transparent mb-2">
+              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B00] dark:from-[#4D9CFF] dark:to-[#FF8B3D] bg-clip-text text-transparent mb-2">
                 We Are Building Something Amazing
               </h2>
               
               <div className="w-20 h-1 mx-auto mb-4 bg-gradient-to-r from-[#0052CC] to-[#FF6B00] rounded-full"></div>
               
-              <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-5">
+              <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-5">
                 Stay tuned for exciting new features, programs, and resources that will transform your learning experience!
               </p>
               
