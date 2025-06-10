@@ -220,6 +220,156 @@ export default function UniversitiesPage() {
         </div>
       </section>
 
+      {/* University Logos Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Trusted University Partners</h2>
+            <p className="mt-2 text-gray-600">Prestigious institutions across India that collaborate with our programs</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10">
+            {/* Using real university logos from UniversityLogosSection component */}
+            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center hover:shadow-md transition-all duration-300">
+              <div className="relative h-24 w-full mb-4">
+                <Image
+                  src="/images/university-logos/Manipal Logo.png"
+                  alt="Manipal University Logo"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "center"
+                  }}
+                />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">Manipal University</h3>
+              <Link href="/universities/partners/manipal" className="mt-2 text-sm text-[#0052CC] hover:text-[#003D99] font-medium flex items-center gap-1">
+                Explore Courses
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center hover:shadow-md transition-all duration-300">
+              <div className="relative h-24 w-full mb-4">
+                <Image
+                  src="/images/university-logos/jain University logo.jpeg"
+                  alt="Jain University Logo"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "center"
+                  }}
+                />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">Jain University</h3>
+              <Link href="/universities/partners/jain" className="mt-2 text-sm text-[#0052CC] hover:text-[#003D99] font-medium flex items-center gap-1">
+                Explore Courses
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center hover:shadow-md transition-all duration-300">
+              <div className="relative h-24 w-full mb-4">
+                <Image
+                  src="/images/university-logos/Lpu Logo.png"
+                  alt="LPU - Lovely Professional University Logo"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "center"
+                  }}
+                />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">LPU - Lovely Professional University</h3>
+              <Link href="/universities/partners/lpu" className="mt-2 text-sm text-[#0052CC] hover:text-[#003D99] font-medium flex items-center gap-1">
+                Explore Courses
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center hover:shadow-md transition-all duration-300">
+              <div className="relative h-24 w-full mb-4">
+                <Image
+                  src="/images/university-logos/Amity Logo.png"
+                  alt="Amity University Logo"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "center"
+                  }}
+                />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">Amity University</h3>
+              <Link href="/universities/partners/amity" className="mt-2 text-sm text-[#0052CC] hover:text-[#003D99] font-medium flex items-center gap-1">
+                Explore Courses
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center hover:shadow-md transition-all duration-300">
+              <div className="relative h-24 w-full mb-4">
+                <Image
+                  src="/images/university-logos/MasterUnion Logo.jpeg"
+                  alt="Master Union Logo"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "center"
+                  }}
+                />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">Master Union</h3>
+              <Link href="/universities/partners/masterunion" className="mt-2 text-sm text-[#0052CC] hover:text-[#003D99] font-medium flex items-center gap-1">
+                Explore Courses
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-lg p-6 flex flex-col items-center hover:shadow-md transition-all duration-300">
+              <div className="relative h-24 w-full mb-4">
+                <Image
+                  src="/images/university-logos/Svy University Logo.jpeg"
+                  alt="S-Vyasa University Logo"
+                  fill
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "center"
+                  }}
+                />
+              </div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">S-Vyasa University</h3>
+              <Link href="/universities/partners/svyasa" className="mt-2 text-sm text-[#0052CC] hover:text-[#003D99] font-medium flex items-center gap-1">
+                Explore Courses
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+          
+          <div className="flex justify-center">
+            <Link href="/courses">
+              <button className="bg-gradient-to-r from-[#0052CC] to-[#003D99] hover:from-[#003D99] hover:to-[#002266] text-white py-3 px-8 rounded-md font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2">
+                View All Courses
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Filter Navigation */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
