@@ -347,7 +347,8 @@ export default function UniversitiesPage() {
                   }}
                 />
               </div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">S-Vyasa University</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-2">S-VYASA 
+                Deemed to be University</h3>
               <Link href="/universities/partners/svyasa" className="mt-2 text-sm text-[#0052CC] hover:text-[#003D99] font-medium flex items-center gap-1">
                 Explore Courses
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">

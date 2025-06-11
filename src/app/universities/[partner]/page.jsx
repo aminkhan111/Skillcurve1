@@ -257,7 +257,7 @@ export default function UniversityDetails() {
               </div>
             </div>
             <div className="bg-gradient-to-br from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-900 rounded-xl p-6 text-white shadow-xl">
-              <h3 className="text-xl font-semibold mb-4">Why Choose {university.name}?</h3>
+              <h3 className="text-xl font-semibold mb-4">Why Choose {university.name}</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -355,7 +355,7 @@ export default function UniversityDetails() {
       {/* Call to Action */}
       <section className="py-12 bg-gradient-to-r from-blue-600 to-blue-800">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Start Your Journey at {university.name}?</h2>
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Start Your Journey at {university.name}</h2>
           <p className="text-white/90 text-lg mb-8 max-w-3xl mx-auto">
             Our education consultants are ready to guide you through the application process and help you secure admission to your dream course.
           </p>

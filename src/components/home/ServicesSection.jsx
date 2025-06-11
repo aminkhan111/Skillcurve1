@@ -8,7 +8,6 @@ import { useState } from "react";
 
 export default function ServicesSection() {
   const router = useRouter();
-  const [showConsultationForm, setShowConsultationForm] = useState(false);
   
   // Function to handle card clicks
   const handleCardClick = (path) => {
@@ -16,9 +15,13 @@ export default function ServicesSection() {
     router.push(path);
   };
 
-  // Function to toggle consultation form
-  const toggleConsultationForm = () => {
-    setShowConsultationForm(!showConsultationForm);
+  // Function to trigger the PopupForm
+  const openConsultationForm = () => {
+    // Dispatch a custom event to show the PopupForm
+    if (typeof window !== "undefined") {
+      const event = new Event("showConsultationPopup");
+      window.dispatchEvent(event);
+    }
   };
 
   // Wavy line animation variant
@@ -154,7 +157,7 @@ Partnered with top universities to bring you flexible, affordable, and recognize
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
               transition: { duration: 0.3 }
             }}
-            onClick={toggleConsultationForm}
+            onClick={openConsultationForm}
           >
             {/* Enhanced background effects */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-200 to-orange-100 rounded-bl-full -z-10 opacity-70 group-hover:scale-125 transition-transform duration-500"></div>
@@ -178,7 +181,7 @@ Partnered with top universities to bring you flexible, affordable, and recognize
             
             {/* Enhanced button with hover effect */}
             <div className="group-hover:shadow-lg">
-              <span className="inline-flex items-center text-orange-500 font-semibold group-hover:text-blue-600 transition-colors relative">
+              <span onClick={openConsultationForm} className="inline-flex items-center text-orange-500 font-semibold group-hover:text-blue-600 transition-colors relative cursor-pointer">
                 <span>Book a Free Consultation</span>
                 <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -294,89 +297,6 @@ Partnered with top universities to bring you flexible, affordable, and recognize
       </div>
 
       {/* Consultation Form Popup */}
-      {showConsultationForm && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={toggleConsultationForm}
-          ></div>
-          <motion.div 
-            className="bg-white rounded-xl p-8 shadow-2xl relative z-10 w-full max-w-md overflow-hidden"
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <button 
-              onClick={toggleConsultationForm}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            <h3 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-orange-500">Book a Free Consultation</h3>
-            
-            <form>
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input 
-                  type="text" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your full name"
-                  required
-                />
-              </div>
-              
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                <input 
-                  type="email" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your email address"
-                  required
-                />
-              </div>
-              
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                <input 
-                  type="tel" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your phone number"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Area of Interest</label>
-                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  <option value="">Select an option</option>
-                  <option value="career">Career Guidance</option>
-                  <option value="academic">Academic Counseling</option>
-                  <option value="skilldev">Skill Development</option>
-                  <option value="placement">Placement Support</option>
-                </select>
-              </div>
-              
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
-                <textarea 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  rows="3"
-                  placeholder="Tell us what you need help with"
-                ></textarea>
-              </div>
-              
-              <button 
-                type="submit"
-                className="w-full py-3 bg-gradient-to-r from-blue-600 to-orange-500 text-white rounded-md hover:shadow-lg transition-all transform hover:scale-[1.02] font-medium"
-              >
-                Submit Request
-              </button>
-            </form>
-          </motion.div>
-        </div>
-      )}
-    </section>
+            </section>
   );
 } 

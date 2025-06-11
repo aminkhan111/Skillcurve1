@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function UniversityLogosSection() {
   // Wavy line animation variant
@@ -63,80 +64,94 @@ export default function UniversityLogosSection() {
     {
       name: "Manipal University",
       logo: "/images/university-logos/Manipal Logo.png",
+      urlPath: "manipal"
     },
     {
       name: "Jain University",
       logo: "/images/university-logos/jain University logo.jpeg",
+      urlPath: "jain"
     },
     {
       name: "LPU - Lovely Professional University",
       logo: "/images/university-logos/Lpu Logo.png",
+      urlPath: "lpu"
     },
     {
       name: "GLA University",
       logo: "/images/university-logos/Wex University.png", // Using Wex University as a placeholder for GLA
+      urlPath: "gla"
     },
     {
       name: "Amity University",
       logo: "/images/university-logos/Amity Logo.png",
+      urlPath: "amity"
     },
     {
       name: "Master Union",
       logo: "/images/university-logos/MasterUnion Logo.jpeg",
+      urlPath: "masterunion"
     },
     {
       name: "S-Vyasa University",
       logo: "/images/university-logos/Svy University Logo.jpeg",
+      urlPath: "svyasa"
     },
     {
       name: "Woxsen University",
       logo: "/images/university-logos/Wex University.png",
+      urlPath: "woxsen"
     },
     {
       name: "NMIMS",
       logo: "/images/university-logos/Nmims Logo.png",
+      urlPath: "nmims"
     },
     {
       name: "Parul University",
       logo: "/images/university-logos/Parul Logo.png",
+      urlPath: "parul"
     }
   ];
 
   // Create an array with the components
   const logoComponents = universityLogos.map((university, index) => (
     <div key={`original-${university.name}-${index}`} className="flex-shrink-0">
-      <div className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2">
-        <div className="relative h-20 w-full">
-          <Image
-            src={university.logo}
-            alt={`${university.name} Logo`}
-            fill
-            style={{
-              objectFit: "contain",
-              objectPosition: "center"
-            }}
-          />
+      <Link href={`/universities/partners/${university.urlPath}`}>
+        <div className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2 cursor-pointer hover:shadow-md transition-shadow duration-300">
+          <div className="relative h-20 w-full">
+            <Image
+              src={university.logo}
+              alt={`${university.name} Logo`}
+              fill
+              style={{
+                objectFit: "contain",
+                objectPosition: "center"
+              }}
+            />
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   ));
 
   // Duplicate logos for seamless infinite scroll effect with unique keys
   const duplicatedLogoComponents = universityLogos.map((university, index) => (
     <div key={`duplicate-${university.name}-${index}`} className="flex-shrink-0">
-      <div className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2">
-        <div className="relative h-20 w-full">
-          <Image
-            src={university.logo}
-            alt={`${university.name} Logo`}
-            fill
-            style={{
-              objectFit: "contain",
-              objectPosition: "center"
-            }}
-          />
+      <Link href={`/universities/partners/${university.urlPath}`}>
+        <div className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2 cursor-pointer hover:shadow-md transition-shadow duration-300">
+          <div className="relative h-20 w-full">
+            <Image
+              src={university.logo}
+              alt={`${university.name} Logo`}
+              fill
+              style={{
+                objectFit: "contain",
+                objectPosition: "center"
+              }}
+            />
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   ));
 
