@@ -11,14 +11,37 @@ export default function FeaturedCoursesSection() {
   const [width, setWidth] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(4);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if we're on mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     if (carouselRef.current) {
-      setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
-      const calculatedMaxIndex = Math.floor(width / (carouselRef.current.offsetWidth / 4));
-      setMaxIndex(calculatedMaxIndex > 0 ? calculatedMaxIndex : 4);
+      const updateWidth = () => {
+        setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
+        const visibleItems = isMobile ? 1 : 3; // Show fewer items on mobile
+        const calculatedMaxIndex = Math.max(0, courses.length - visibleItems);
+        setMaxIndex(calculatedMaxIndex);
+      };
+
+      updateWidth();
+      window.addEventListener('resize', updateWidth);
+      
+      return () => window.removeEventListener('resize', updateWidth);
     }
-  }, [width]);
+  }, [width, isMobile]);
 
   // Function to show consultation popup
   const handleShowConsultation = (e) => {
@@ -34,24 +57,30 @@ export default function FeaturedCoursesSection() {
 
   // Auto scroll functionality
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (carouselRef.current) {
-        setActiveIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1));
-      }
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [maxIndex]);
+    // Only enable auto-scrolling on non-mobile devices
+    if (!isMobile) {
+      const interval = setInterval(() => {
+        if (carouselRef.current) {
+          setActiveIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1));
+        }
+      }, 5000);
+      
+      return () => clearInterval(interval);
+    }
+  }, [maxIndex, isMobile]);  // Add isMobile as dependency to re-evaluate when screen size changes
 
   useEffect(() => {
     if (carouselRef.current) {
-      const scrollAmount = (carouselRef.current.scrollWidth / 5) * activeIndex;
+      // For mobile, center the card precisely
+      const cardWidth = isMobile ? carouselRef.current.offsetWidth : carouselRef.current.scrollWidth / 5;
+      const scrollAmount = cardWidth * activeIndex;
+      
       carouselRef.current.scrollTo({
         left: scrollAmount,
         behavior: "smooth"
       });
     }
-  }, [activeIndex]);
+  }, [activeIndex, isMobile]);
 
   // Navigation functions
   const handlePrevClick = () => {
@@ -60,6 +89,35 @@ export default function FeaturedCoursesSection() {
 
   const handleNextClick = () => {
     setActiveIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1));
+  };
+
+  // Touch event handlers for better mobile experience
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    
+    const currentX = e.touches[0].clientX;
+    const diff = startX - currentX;
+    
+    // Threshold to determine swipe
+    if (Math.abs(diff) > 50) {
+      if (diff > 0 && activeIndex < maxIndex) {
+        // Swiped left
+        handleNextClick();
+      } else if (diff < 0 && activeIndex > 0) {
+        // Swiped right
+        handlePrevClick();
+      }
+      setIsDragging(false);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
   };
 
   // Course data with Unsplash images
@@ -335,15 +393,15 @@ export default function FeaturedCoursesSection() {
           {/* Left Navigation Arrow */}
           <motion.button
             onClick={handlePrevClick}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 md:translate-x-0 bg-white/80 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center shadow-lg border border-white/40"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-20 md:translate-x-0 bg-white/80 backdrop-blur-sm rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center shadow-lg border border-white/40"
             variants={arrowVariants}
             initial="initial"
             whileHover="hover"
             whileTap="tap"
             aria-label="Previous slide"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-orange-500 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-blue-600 to-orange-500 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </div>
@@ -351,12 +409,15 @@ export default function FeaturedCoursesSection() {
 
           <motion.div 
             ref={carouselRef}
-            className="overflow-hidden cursor-grab px-4"
+            className="overflow-hidden touch-pan-y px-0 sm:px-4"
             whileTap={{ cursor: "grabbing" }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
             <motion.div 
-              className="flex gap-6 pb-8"
-              drag="x"
+              className={`flex ${isMobile ? 'gap-0' : 'gap-3 sm:gap-6'} pb-8`}
+              drag={isMobile ? false : "x"}
               dragConstraints={{ right: 0, left: -width }}
               initial={{ x: 0 }}
               animate={{ x: 0 }}
@@ -365,14 +426,14 @@ export default function FeaturedCoursesSection() {
               {courses.map((course) => (
                 <motion.div 
                   key={course.id}
-                  className="min-w-[350px] bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 flex-shrink-0"
+                  className={`${isMobile ? 'min-w-full' : 'min-w-[280px] sm:min-w-[320px] md:min-w-[350px]'} bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 flex-shrink-0`}
                   variants={cardVariants}
                   whileHover="hover"
                 >
                   {/* Course image */}
-                  <div className="relative h-52 w-full">
-                    <div className="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur-sm py-1 px-3 rounded-full">
-                      <span className="text-sm font-medium text-gray-700">{course.category}</span>
+                  <div className="relative h-40 sm:h-48 md:h-52 w-full">
+                    <div className="absolute top-4 right-4 z-10 bg-white/80 backdrop-blur-sm py-1 px-2 sm:px-3 rounded-full">
+                      <span className="text-xs sm:text-sm font-medium text-gray-700">{course.category}</span>
                     </div>
                     <Image 
                       src={course.image} 
@@ -384,28 +445,27 @@ export default function FeaturedCoursesSection() {
                   </div>
 
                   {/* Course details */}
-                  <div className="p-6">
-                    <div className="flex items-center mb-4 text-sm">
-                      <svg className="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="p-4 sm:p-5 md:p-6">
+                    <div className="flex items-center mb-3 md:mb-4 text-xs sm:text-sm">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                       </svg>
                       <span className="text-gray-600">{course.hours} Hours, </span>
-                      <span className="text-gray-600 ml-1"> Certified, </span>
-                      <span className="text-gray-600 ml-1"> Popular</span>
+                      <span className="text-gray-600 ml-1"> Certified</span>
                     </div>
                     
-                    <h3 className="text-xl font-bold text-gray-800 mb-6">{course.title}</h3>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-800 mb-4 md:mb-6 line-clamp-2">{course.title}</h3>
                     
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mr-2">
-                          <span className="text-xs font-medium">{course.instructor.slice(0, 2)}</span>
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gray-200 flex items-center justify-center mr-2">
+                          <span className="text-2xs sm:text-xs font-medium">{course.instructor.slice(0, 2)}</span>
                         </div>
-                        <span className="text-gray-700 text-sm">{course.instructor}</span>
+                        <span className="text-gray-700 text-xs sm:text-sm">{course.instructor}</span>
                       </div>
                       
                       <Link href="/coming-soon">
-                        <span className="py-2 px-5 bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition-colors text-sm">
+                        <span className="py-1.5 sm:py-2 px-3 sm:px-5 bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition-colors text-xs sm:text-sm whitespace-nowrap">
                           View Course
                         </span>
                       </Link>
@@ -419,15 +479,15 @@ export default function FeaturedCoursesSection() {
           {/* Right Navigation Arrow */}
           <motion.button
             onClick={handleNextClick}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 md:translate-x-0 bg-white/80 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center shadow-lg border border-white/40"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-20 md:translate-x-0 bg-white/80 backdrop-blur-sm rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center shadow-lg border border-white/40"
             variants={arrowVariants}
             initial="initial"
             whileHover="hover"
             whileTap="tap"
             aria-label="Next slide"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-orange-500 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-blue-600 to-orange-500 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </div>
@@ -452,13 +512,13 @@ export default function FeaturedCoursesSection() {
 
         {/* Coming Soon Banner - Now placed after the cards & pagination */}
         <motion.div 
-          className="mt-16 max-w-6xl mx-auto relative overflow-hidden"
+          className="mt-12 sm:mt-16 max-w-6xl mx-auto relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="relative z-10 backdrop-blur-lg bg-white/20 py-8 px-8 rounded-3xl border border-white/30 shadow-2xl overflow-hidden">
+          <div className="relative z-10 backdrop-blur-lg bg-white/20 py-6 sm:py-8 px-4 sm:px-8 rounded-2xl sm:rounded-3xl border border-white/30 shadow-2xl overflow-hidden">
             {/* Animated gradient orbs */}
             <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-gradient-to-br from-[#0052CC]/30 to-[#FF6B00]/30 blur-3xl"></div>
             <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-gradient-to-br from-[#FF6B00]/30 to-[#0052CC]/30 blur-3xl"></div>
@@ -492,13 +552,13 @@ export default function FeaturedCoursesSection() {
                 COMING SOON
               </motion.div>
               
-              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B00] bg-clip-text text-transparent mb-2">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B00] bg-clip-text text-transparent mb-2">
                 We Are Building Something Amazing
               </h3>
               
-              <div className="w-48 h-1.5 ml-0 mb-5 bg-gradient-to-r from-[#0052CC] to-[#FF6B00] rounded-full shadow-sm"></div>
+              <div className="w-32 sm:w-48 h-1.5 ml-0 mb-4 sm:mb-5 bg-gradient-to-r from-[#0052CC] to-[#FF6B00] rounded-full shadow-sm"></div>
               
-              <p className="text-base text-gray-700 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-gray-700 max-w-2xl mx-auto">
                 Stay tuned for exciting new features and courses that will transform your learning experience!
               </p>
               

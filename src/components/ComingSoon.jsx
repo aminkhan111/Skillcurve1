@@ -130,19 +130,19 @@ const ComingSoon = () => {
                     <div className="text-center">
                       <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
                         <div className="text-3xl md:text-4xl font-bold text-gray-800">{countdown.hours}</div>
-                        <div className="text-sm text-gray-500 uppercase tracking-wider">Hours</div>
+                        <div className="text-sm text-gray-500 uppercase tracking-wider">Hrs</div>
                       </div>
                     </div>
                     <div className="text-center">
                       <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
                         <div className="text-3xl md:text-4xl font-bold text-gray-800">{countdown.minutes}</div>
-                        <div className="text-sm text-gray-500 uppercase tracking-wider">Minutes</div>
+                        <div className="text-sm text-gray-500 uppercase tracking-wider">Min</div>
                       </div>
                     </div>
                     <div className="text-center">
                       <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
                         <div className="text-3xl md:text-4xl font-bold text-gray-800">{countdown.seconds}</div>
-                        <div className="text-sm text-gray-500 uppercase tracking-wider">Seconds</div>
+                        <div className="text-sm text-gray-500 uppercase tracking-wider">Sec</div>
                       </div>
                     </div>
                   </motion.div>

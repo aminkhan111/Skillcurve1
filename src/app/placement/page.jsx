@@ -103,7 +103,7 @@ export default function PlacementPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">Resume Building</h3>
+              <h3 className="text-xl font-bold mb-3 text-blue-600">Resume Building</h3>
               <p className="text-gray-600">
                 Our experts will help you create a professional resume that highlights your strengths and achievements to stand out to potential employers.
               </p>
@@ -122,7 +122,7 @@ export default function PlacementPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-orange-500 transition-colors">Interview Preparation</h3>
+              <h3 className="text-xl font-bold mb-3 text-orange-500">Interview Preparation</h3>
               <p className="text-gray-600">
                 Prepare for interviews with mock sessions, feedback, and expert tips on handling common and technical questions in your field.
               </p>
@@ -141,7 +141,7 @@ export default function PlacementPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600 transition-colors">Employer Connections</h3>
+              <h3 className="text-xl font-bold mb-3 text-purple-600">Employer Connections</h3>
               <p className="text-gray-600">
                 Connect with our network of partner companies and organizations looking to hire talented professionals in your field.
               </p>
@@ -160,7 +160,7 @@ export default function PlacementPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-green-600 transition-colors">Job Application Support</h3>
+              <h3 className="text-xl font-bold mb-3 text-green-600">Job Application Support</h3>
               <p className="text-gray-600">
                 Get assistance with job applications, including cover letter writing, portfolio preparation, and application tracking.
               </p>
@@ -179,7 +179,7 @@ export default function PlacementPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-red-600 transition-colors">Career Advancement Planning</h3>
+              <h3 className="text-xl font-bold mb-3 text-red-600">Career Advancement Planning</h3>
               <p className="text-gray-600">
                 Develop a long-term career plan with expert guidance to help you achieve your professional goals and aspirations.
               </p>
@@ -198,7 +198,7 @@ export default function PlacementPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-yellow-600 transition-colors">Salary Negotiation</h3>
+              <h3 className="text-xl font-bold mb-3 text-yellow-600">Salary Negotiation</h3>
               <p className="text-gray-600">
                 Learn effective strategies for negotiating your salary and benefits package to secure the compensation you deserve.
               </p>
