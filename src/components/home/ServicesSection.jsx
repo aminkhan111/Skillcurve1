@@ -113,7 +113,7 @@ export default function ServicesSection() {
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
               transition: { duration: 0.3 }
             }}
-            onClick={() => handleCardClick("/courses")}
+            onClick={() => handleCardClick("/universities")}
           >
             {/* Enhanced background effects */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-200 to-orange-100 rounded-bl-full -z-10 opacity-70 group-hover:scale-125 transition-transform duration-500"></div>
