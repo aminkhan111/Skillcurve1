@@ -618,7 +618,7 @@ export default function PlacementPage() {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-blue-600 to-orange-500 rounded-3xl p-12 text-center text-white relative overflow-hidden"
           >
-            <div className="absolute inset-0 flex items-center justify-center opacity-10">
+            <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-full w-full" viewBox="0 0 100 100">
                 <path d="M50 5 L95 50 L50 95 L5 50 Z" fill="none" stroke="currentColor" strokeWidth="2" />
                 <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -631,12 +631,13 @@ export default function PlacementPage() {
             </p>
             
             <div className="flex justify-center gap-6 flex-wrap">
-              <Link 
-                href="/contact" 
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new Event("showConsultationPopup"))}
                 className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:shadow-xl hover:bg-blue-50 transition duration-300 transform hover:-translate-y-1"
               >
                 Schedule Consultation
-              </Link>
+              </button>
               <Link 
                 href="/jobs" 
                 className="px-8 py-4 bg-transparent text-white border-2 border-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:bg-white/10 transition duration-300 transform hover:-translate-y-1"
