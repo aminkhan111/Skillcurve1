@@ -10,6 +10,7 @@ import {
   FaCommentDots,
   FaLinkedin
 } from 'react-icons/fa';
+import { trackWhatsAppClick, trackEvent } from './GoogleAnalytics';
 
 const WhatsAppButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -33,6 +34,14 @@ const WhatsAppButton = () => {
   //   return () => window.removeEventListener('scroll', handleScroll);
   // }, []);
  
+  const handleSocialClick = (platform) => {
+    if (platform === 'whatsapp') {
+      trackWhatsAppClick();
+    } else {
+      trackEvent(`${platform}_click`, 'social_interaction', `${platform}_button`, 1);
+    }
+  };
+
   const socialLinks = [
     {
       Icon: FaWhatsapp,
@@ -40,6 +49,7 @@ const WhatsAppButton = () => {
       bgColor: 'bg-green-500',
       hoverBgColor: 'hover:bg-green-600',
       ariaLabel: 'Chat on WhatsApp',
+      platform: 'whatsapp',
     },
     {
       Icon: FaInstagram,
@@ -47,6 +57,7 @@ const WhatsAppButton = () => {
       bgColor: 'bg-pink-500',
       hoverBgColor: 'hover:bg-pink-600',
       ariaLabel: 'Follow on Instagram',
+      platform: 'instagram',
     },
     {
       Icon: FaLinkedin,
@@ -54,6 +65,7 @@ const WhatsAppButton = () => {
       bgColor: 'bg-blue-700',
       hoverBgColor: 'hover:bg-blue-800',
       ariaLabel: 'Connect on LinkedIn',
+      platform: 'linkedin',
     },
     {
       Icon: FaFacebookMessenger,
@@ -92,6 +104,7 @@ const WhatsAppButton = () => {
                 className={`p-3 rounded-full text-white shadow-lg transition-transform transform hover:scale-110 ${social.bgColor} ${social.hoverBgColor}`}
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => handleSocialClick(social.platform)}
               >
                 <social.Icon size={24} />
               </motion.a>

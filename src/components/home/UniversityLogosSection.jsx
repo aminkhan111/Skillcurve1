@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { trackUniversityInterest } from "@/components/GoogleAnalytics";
 
 export default function UniversityLogosSection() {
   // Wavy line animation variant
@@ -117,7 +118,10 @@ export default function UniversityLogosSection() {
   const logoComponents = universityLogos.map((university, index) => (
     <div key={`original-${university.name}-${index}`} className="flex-shrink-0">
       <Link href={`/universities/partners/${university.urlPath}`}>
-        <div className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <div
+          className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2 cursor-pointer hover:shadow-md transition-shadow duration-300"
+          onClick={() => trackUniversityInterest(university.name)}
+        >
           <div className="relative h-20 w-full">
             <Image
               src={university.logo}
@@ -138,7 +142,10 @@ export default function UniversityLogosSection() {
   const duplicatedLogoComponents = universityLogos.map((university, index) => (
     <div key={`duplicate-${university.name}-${index}`} className="flex-shrink-0">
       <Link href={`/universities/partners/${university.urlPath}`}>
-        <div className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <div
+          className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2 cursor-pointer hover:shadow-md transition-shadow duration-300"
+          onClick={() => trackUniversityInterest(university.name)}
+        >
           <div className="relative h-20 w-full">
             <Image
               src={university.logo}

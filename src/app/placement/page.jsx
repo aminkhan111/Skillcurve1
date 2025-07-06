@@ -294,7 +294,7 @@ export default function PlacementPage() {
             >
               <div className="h-16 flex items-center justify-center">
                 <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Infosys_logo.svg/2560px-Infosys_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg"
                   alt="Infosys"
                   width={120}
                   height={40}
@@ -313,10 +313,10 @@ export default function PlacementPage() {
             >
               <div className="h-16 flex items-center justify-center">
                 <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Tata_Consultancy_Services_old_logo.svg"
                   alt="TCS"
                   width={120}
-                  height={40}
+                  height={400}
                   className="max-h-full w-auto"
                 />
               </div>
@@ -351,7 +351,7 @@ export default function PlacementPage() {
             >
               <div className="h-16 flex items-center justify-center">
                 <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Wipro_logo.svg/2560px-Wipro_logo.svg.png"
+                  src="https://upload.wikimedia.org/wikipedia/commons/8/89/Wipro_new_logo.svg"
                   alt="Wipro"
                   width={120}
                   height={40}
@@ -370,7 +370,7 @@ export default function PlacementPage() {
             >
               <div className="h-16 flex items-center justify-center">
                 <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Accenture.svg/2560px-Accenture.svg.png"
+                  src="https://commons.wikimedia.org/wiki/File:Accenture.svg#/media/File:Accenture.svg"
                   alt="Accenture"
                   width={120}
                   height={40}

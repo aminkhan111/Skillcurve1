@@ -3,11 +3,19 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/utils/animations";
+import { trackButtonClick } from "@/components/GoogleAnalytics";
 
 export default function CallToActionSection() {
   const handleConsultationClick = () => {
+    // Track button click
+    trackButtonClick('schedule_consultation_cta', 'cta');
     // Dispatch custom event to trigger the popup form
     window.dispatchEvent(new Event("showConsultationPopup"));
+  };
+
+  const handleBrowseCoursesClick = () => {
+    // Track button click
+    trackButtonClick('browse_courses_cta', 'cta');
   };
 
   return (
@@ -40,8 +48,9 @@ export default function CallToActionSection() {
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link href="/courses">
-                  <button 
+                  <button
                     className="bg-gradient-to-r from-[#FF6B00] to-[#FF9D00] text-white py-4 px-8 rounded-lg font-medium text-lg transition-all duration-300 hover:shadow-xl shadow-lg shadow-orange-200/50"
+                    onClick={handleBrowseCoursesClick}
                   >
                     Browse Our Courses
                   </button>

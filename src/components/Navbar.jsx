@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useNavigation } from "./utils/navigation";
 import { useRouter } from "next/navigation";
+import { trackNavigation, trackButtonClick } from "./GoogleAnalytics";
 
 // Desktop dropdown component
 const DesktopDropdown = ({ title, isOpen, toggleDropdown, items, handleNavigation }) => {
@@ -150,6 +151,11 @@ export default function Navbar() {
   // Function to handle navigation with loader
   const handleNavigation = (e, href) => {
     e.stopPropagation(); // Prevent the dropdown toggle from being triggered
+
+    // Track navigation click
+    const pageName = href === '/' ? 'home' : href.replace('/', '');
+    trackNavigation(pageName);
+
     closeMenu(); // Close the menu
     window.location.href = href; // Force navigation directly
   };
@@ -158,10 +164,13 @@ export default function Navbar() {
   const handleConsultationClick = (e) => {
     e.preventDefault();
     closeMenu();
-    
+
+    // Track consultation button click
+    trackButtonClick('schedule_consultation_navbar', 'cta');
+
     // Store in localStorage that we're manually showing the popup
     localStorage.setItem("popupShown", "true");
-    
+
     // Dispatch a custom event that the PopupForm component will listen for
     const event = new Event("showConsultationPopup");
     window.dispatchEvent(event);

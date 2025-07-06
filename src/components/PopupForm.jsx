@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackFormSubmission } from "./GoogleAnalytics";
 
 const PopupForm = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -109,7 +110,10 @@ const PopupForm = () => {
       setIsSubmitting(false);
       console.log("Form submitted successfully to HubSpot");
       setIsSubmitted(true);
-      
+
+      // Track form submission in Google Analytics
+      trackFormSubmission('consultation_popup_form', 'lead_generation');
+
       // Close popup after showing success message for 2 seconds
       setTimeout(() => {
         closePopup();

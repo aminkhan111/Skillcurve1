@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { trackButtonClick } from "@/components/GoogleAnalytics";
 
 export default function HowItWorksSection() {
   // Animation variants
@@ -27,10 +28,13 @@ export default function HowItWorksSection() {
   // Function to show consultation popup
   const handleShowConsultation = (e) => {
     e.preventDefault();
-    
+
+    // Track button click
+    trackButtonClick('start_journey_how_it_works', 'cta');
+
     // Store in localStorage that we're manually showing the popup
     localStorage.setItem("popupShown", "true");
-    
+
     // Dispatch a custom event that the PopupForm component will listen for
     const event = new Event("showConsultationPopup");
     window.dispatchEvent(event);

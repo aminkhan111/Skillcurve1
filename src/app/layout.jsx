@@ -6,6 +6,7 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import PopupForm from "../components/PopupForm";
 import Loader from "../components/ui/Loader";
 import LoadingProvider from "../components/ui/LoadingProvider";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,19 +54,22 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
+        {/* Google Analytics */}
+        <GoogleAnalytics />
+
         <LoadingProvider>
           {/* Page transition loader */}
           <Loader />
-          
+
           <Navbar />
           <main className="min-h-screen">
             {children}
           </main>
           <Footer />
-          
+
           {/* WhatsApp floating button visible on all pages */}
           <WhatsAppButton />
-          
+
           {/* Popup form that appears after 5 seconds */}
           <PopupForm />
         </LoadingProvider>
