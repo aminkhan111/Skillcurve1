@@ -3,12 +3,12 @@
 import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
-// Meta Pixel ID - replace with your actual Meta Pixel ID
-const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || 'YOUR_PIXEL_ID_HERE';
+// Meta Pixel ID
+const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 // Initialize Meta Pixel
 export const initMetaPixel = () => {
-  if (typeof window !== 'undefined' && META_PIXEL_ID && META_PIXEL_ID !== 'YOUR_PIXEL_ID_HERE') {
+  if (typeof window !== 'undefined' && META_PIXEL_ID) {
     // Initialize Facebook Pixel
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -26,14 +26,14 @@ export const initMetaPixel = () => {
 
 // Track page views
 export const trackMetaPageView = () => {
-  if (typeof window !== 'undefined' && window.fbq && META_PIXEL_ID !== 'YOUR_PIXEL_ID_HERE') {
+  if (typeof window !== 'undefined' && window.fbq && META_PIXEL_ID) {
     window.fbq('track', 'PageView');
   }
 };
 
 // Track custom events
 export const trackMetaEvent = (eventName, parameters = {}) => {
-  if (typeof window !== 'undefined' && window.fbq && META_PIXEL_ID !== 'YOUR_PIXEL_ID_HERE') {
+  if (typeof window !== 'undefined' && window.fbq && META_PIXEL_ID) {
     window.fbq('track', eventName, parameters);
   }
 };
