@@ -174,7 +174,7 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#0052CC] group-hover:to-[#FF6B00] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Sarah Johnson</h4>
+                <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#0052CC] group-hover:to-[#FF6B00] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Praveen Kumar</h4>
                 <p className="text-gray-700">Data Scientist</p>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#FF6B00] group-hover:to-[#0052CC] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Michael Chen</h4>
+                <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#FF6B00] group-hover:to-[#0052CC] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Sumit Kumar</h4>
                 <p className="text-gray-700">Full-Stack Developer</p>
               </div>
             </div>
@@ -243,7 +243,7 @@ export default function TestimonialsSection() {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#0052CC] to-[#FF6B00] blur-sm -m-0.5 opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
                 <div className="relative h-full w-full">
                   <Image 
-                    src="https://images.unsplash.com/photo-1621353269062-6aa0165156a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                    src="https://images.unsplash.com/photo-1592085550638-e6bc180a731e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Jessica Patel"
                     fill
                     style={{objectFit: "cover", objectPosition: "center"}}
