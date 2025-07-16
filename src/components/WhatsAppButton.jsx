@@ -11,6 +11,7 @@ import {
   FaLinkedin
 } from 'react-icons/fa';
 import { trackWhatsAppClick, trackEvent } from './GoogleAnalytics';
+import { trackMetaSocialClick } from './MetaPixel';
 
 const WhatsAppButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -35,11 +36,15 @@ const WhatsAppButton = () => {
   // }, []);
  
   const handleSocialClick = (platform) => {
+    // Google Analytics tracking
     if (platform === 'whatsapp') {
       trackWhatsAppClick();
     } else {
       trackEvent(`${platform}_click`, 'social_interaction', `${platform}_button`, 1);
     }
+
+    // Meta Pixel tracking
+    trackMetaSocialClick(platform);
   };
 
   const socialLinks = [

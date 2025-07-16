@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { trackCourseInterest } from "@/components/GoogleAnalytics";
+import { trackMetaCourseInterest } from "@/components/MetaPixel";
 import { cardVariants } from "@/components/utils/animations";
 
 export default function FeaturedCoursesSection() {
@@ -468,7 +469,10 @@ export default function FeaturedCoursesSection() {
                       <Link href="/coming-soon">
                         <span
                           className="py-1.5 sm:py-2 px-3 sm:px-5 bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition-colors text-xs sm:text-sm whitespace-nowrap"
-                          onClick={() => trackCourseInterest(course.title)}
+                          onClick={() => {
+                            trackCourseInterest(course.title);
+                            trackMetaCourseInterest(course.title, course.category);
+                          }}
                         >
                           View Course
                         </span>

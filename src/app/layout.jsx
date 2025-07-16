@@ -7,6 +7,7 @@ import PopupForm from "../components/PopupForm";
 import Loader from "../components/ui/Loader";
 import LoadingProvider from "../components/ui/LoadingProvider";
 import GoogleAnalytics from "../components/GoogleAnalytics";
+import MetaPixel from "../components/MetaPixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,6 +57,9 @@ export default function RootLayout({ children }) {
       >
         {/* Google Analytics */}
         <GoogleAnalytics />
+
+        {/* Meta Pixel (Facebook Pixel) */}
+        <MetaPixel />
 
         <LoadingProvider>
           {/* Page transition loader */}

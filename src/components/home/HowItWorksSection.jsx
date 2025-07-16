@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { trackButtonClick } from "@/components/GoogleAnalytics";
+import { trackMetaButtonClick, trackMetaConsultationRequest } from "@/components/MetaPixel";
 
 export default function HowItWorksSection() {
   // Animation variants
@@ -29,8 +30,12 @@ export default function HowItWorksSection() {
   const handleShowConsultation = (e) => {
     e.preventDefault();
 
-    // Track button click
+    // Track button click in Google Analytics
     trackButtonClick('start_journey_how_it_works', 'cta');
+
+    // Track button click in Meta Pixel
+    trackMetaButtonClick('start_journey_how_it_works', 'cta');
+    trackMetaConsultationRequest();
 
     // Store in localStorage that we're manually showing the popup
     localStorage.setItem("popupShown", "true");

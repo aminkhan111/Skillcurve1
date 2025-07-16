@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { trackFormSubmission } from "./GoogleAnalytics";
+import { trackMetaFormSubmission, trackMetaConsultationRequest } from "./MetaPixel";
 
 const PopupForm = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -113,6 +114,10 @@ const PopupForm = () => {
 
       // Track form submission in Google Analytics
       trackFormSubmission('consultation_popup_form', 'lead_generation');
+
+      // Track form submission in Meta Pixel
+      trackMetaFormSubmission('consultation_popup_form', 'lead');
+      trackMetaConsultationRequest(formData.courseInterest);
 
       // Close popup after showing success message for 2 seconds
       setTimeout(() => {

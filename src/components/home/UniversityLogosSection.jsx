@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { trackUniversityInterest } from "@/components/GoogleAnalytics";
+import { trackMetaUniversityInterest } from "@/components/MetaPixel";
 
 export default function UniversityLogosSection() {
   // Wavy line animation variant
@@ -120,7 +121,10 @@ export default function UniversityLogosSection() {
       <Link href={`/universities/partners/${university.urlPath}`}>
         <div
           className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2 cursor-pointer hover:shadow-md transition-shadow duration-300"
-          onClick={() => trackUniversityInterest(university.name)}
+          onClick={() => {
+            trackUniversityInterest(university.name);
+            trackMetaUniversityInterest(university.name);
+          }}
         >
           <div className="relative h-20 w-full">
             <Image
@@ -144,7 +148,10 @@ export default function UniversityLogosSection() {
       <Link href={`/universities/partners/${university.urlPath}`}>
         <div
           className="h-32 w-48 md:w-56 flex items-center justify-center bg-white rounded-lg shadow-sm p-4 mx-2 cursor-pointer hover:shadow-md transition-shadow duration-300"
-          onClick={() => trackUniversityInterest(university.name)}
+          onClick={() => {
+            trackUniversityInterest(university.name);
+            trackMetaUniversityInterest(university.name);
+          }}
         >
           <div className="relative h-20 w-full">
             <Image

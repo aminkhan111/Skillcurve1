@@ -138,3 +138,53 @@ The implementation follows privacy best practices:
 - No personally identifiable information (PII) is sent to GA
 - Respects user privacy preferences
 - Compatible with GDPR and other privacy regulations
+
+## Meta Pixel Integration
+
+This project also includes comprehensive Meta Pixel (Facebook Pixel) tracking for Facebook/Instagram advertising optimization and retargeting.
+
+### Setup
+
+1. **Get your Meta Pixel ID:**
+   - Go to [Facebook Business Manager](https://business.facebook.com/)
+   - Navigate to Events Manager
+   - Copy your Pixel ID (format: 123456789012345)
+
+2. **Configure Environment Variables:**
+   ```bash
+   # Add to .env.local
+   NEXT_PUBLIC_META_PIXEL_ID=YOUR_PIXEL_ID
+   ```
+
+3. **Deploy and Verify:**
+   - Deploy your application
+   - Check Facebook Events Manager for real-time events
+   - Use Facebook Pixel Helper browser extension to verify
+
+### Tracked Events
+
+The application automatically tracks Facebook standard events:
+
+#### **Standard Events**
+- PageView, Lead, CompleteRegistration, Contact
+- ViewContent, Search, InitiateCheckout
+
+#### **Custom Events**
+- ConsultationRequest, CourseInterest, UniversityInterest
+- FormSubmission, ButtonClick, SocialClick
+
+#### **Conversion Optimization**
+- Lead generation campaigns
+- Custom audience creation
+- Lookalike audience targeting
+- Retargeting campaigns
+
+### Facebook Ads Benefits
+
+1. **Custom Audiences:** Target website visitors, course interested users
+2. **Lookalike Audiences:** Find similar potential students
+3. **Conversion Tracking:** Optimize for consultation requests
+4. **Retargeting:** Re-engage users who didn't convert
+5. **Attribution:** Track ad performance and ROI
+
+For detailed setup instructions, see [META_PIXEL_SETUP.md](META_PIXEL_SETUP.md).

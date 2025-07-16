@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigation } from "./utils/navigation";
 import { useRouter } from "next/navigation";
 import { trackNavigation, trackButtonClick } from "./GoogleAnalytics";
+import { trackMetaButtonClick, trackMetaConsultationRequest } from "./MetaPixel";
 
 // Desktop dropdown component
 const DesktopDropdown = ({ title, isOpen, toggleDropdown, items, handleNavigation }) => {
@@ -165,8 +166,12 @@ export default function Navbar() {
     e.preventDefault();
     closeMenu();
 
-    // Track consultation button click
+    // Track consultation button click in Google Analytics
     trackButtonClick('schedule_consultation_navbar', 'cta');
+
+    // Track consultation button click in Meta Pixel
+    trackMetaButtonClick('schedule_consultation_navbar', 'cta');
+    trackMetaConsultationRequest();
 
     // Store in localStorage that we're manually showing the popup
     localStorage.setItem("popupShown", "true");

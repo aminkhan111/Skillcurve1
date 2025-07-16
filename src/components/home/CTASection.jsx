@@ -4,18 +4,27 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/utils/animations";
 import { trackButtonClick } from "@/components/GoogleAnalytics";
+import { trackMetaButtonClick, trackMetaConsultationRequest } from "@/components/MetaPixel";
 
 export default function CallToActionSection() {
   const handleConsultationClick = () => {
-    // Track button click
+    // Track button click in Google Analytics
     trackButtonClick('schedule_consultation_cta', 'cta');
+
+    // Track button click in Meta Pixel
+    trackMetaButtonClick('schedule_consultation_cta', 'cta');
+    trackMetaConsultationRequest();
+
     // Dispatch custom event to trigger the popup form
     window.dispatchEvent(new Event("showConsultationPopup"));
   };
 
   const handleBrowseCoursesClick = () => {
-    // Track button click
+    // Track button click in Google Analytics
     trackButtonClick('browse_courses_cta', 'cta');
+
+    // Track button click in Meta Pixel
+    trackMetaButtonClick('browse_courses_cta', 'cta');
   };
 
   return (
