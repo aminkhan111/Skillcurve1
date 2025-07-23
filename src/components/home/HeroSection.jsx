@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
@@ -29,8 +29,10 @@ export default function HeroSection() {
   
   // Feature card images from Unsplash
   const featureCardImages = [
-    "https://res.cloudinary.com/dafqumrxm/image/upload/v1753242115/Student_testimonial_1_djgoo1.jpg", // Online learning setup
-       // Laptop and notebook
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Online learning setup
+    "https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Student studying
+    "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Digital education
+    "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"  // Laptop and notebook
   ];
   
   useEffect(() => {
@@ -382,7 +384,7 @@ export default function HeroSection() {
                   ></motion.div>
                   
                   <motion.div 
-                    className="absolute bottom-20 left-5 w-16 h-16 rounded-full  "
+                    className="absolute bottom-20 left-5 w-16 h-16 rounded-full bg-gradient-to-r from-blue-500/30 to-blue-300/30 blur-md"
                     variants={pulseAnimation}
                     animate="animate"
                   ></motion.div>
@@ -408,7 +410,7 @@ export default function HeroSection() {
                     ))}
                     
                     {/* Overlay gradient for better text visibility */}
-                    <div className="absolute inset-0  "></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/30 to-blue-900/80"></div>
                     
                     {/* Logo overlay */}
                     {/* <div className="absolute inset-0 flex items-center justify-center">
@@ -429,14 +431,14 @@ export default function HeroSection() {
                     <h3 className="font-semibold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-200 drop-shadow-lg">Start Learning Today</h3>
                     <p className="text-white text-lg drop-shadow-md">Join thousands of successful graduates</p>
                     
-                    {/* <div className="mt-4 flex items-center">
+                    <div className="mt-4 flex items-center">
                       <div className="flex -space-x-2">
                         {[...Array(4)].map((_, i) => (
                           <div key={i} className={`w-8 h-8 rounded-full border-2 border-white bg-gradient-to-r ${i % 2 === 0 ? 'from-blue-500 to-blue-600' : 'from-orange-400 to-orange-500'}`}></div>
                         ))}
                       </div>
                       <span className="ml-4 text-sm text-white drop-shadow-sm">50+ enrolled this week</span>
-                    </div> */}
+                    </div>
                   </motion.div>
                 </div>
               </motion.div>
