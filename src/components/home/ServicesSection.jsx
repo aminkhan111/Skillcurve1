@@ -65,7 +65,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 text-transparent bg-clip-text mb-6">Our Services</h2>
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-800 to-orange-700 text-transparent bg-clip-text mb-6">Our Services</h2>
           
           {/* Animated wavy line */}
           <motion.div 
@@ -148,48 +148,7 @@ Partnered with top universities to bring you flexible, affordable, and recognize
             </div>
           </motion.div>
 
-          {/* Card 2: Career Counseling */}
-          <motion.div 
-            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group relative overflow-hidden cursor-pointer"
-            variants={cardVariants}
-            whileHover={{
-              y: -5,
-              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-              transition: { duration: 0.3 }
-            }}
-            onClick={openConsultationForm}
-          >
-            {/* Enhanced background effects */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-200 to-orange-100 rounded-bl-full -z-10 opacity-70 group-hover:scale-125 transition-transform duration-500"></div>
-            <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-gradient-to-tr from-blue-200 to-blue-100 rounded-full -z-10 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
-            
-            {/* Enhanced icon with animation */}
-            <div className="bg-gradient-to-r from-orange-500 to-orange-400 p-4 w-16 h-16 rounded-lg mb-6 flex items-center justify-center text-white shadow-md relative overflow-hidden group-hover:scale-110 transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-[#FF6B00] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-              </svg>
-            </div>
-            
-            {/* Enhanced text with animation */}
-            <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-[#0052CC] group-hover:from-[#FF6B00] group-hover:to-[#0052CC] transition-all duration-300">Career Counseling</h3>
-            <div className="h-1 w-16 bg-gradient-to-r from-orange-500 to-[#0052CC] rounded-full mb-3 group-hover:w-32 transition-all duration-500"></div>
-            
-            <p className="text-gray-600 mb-6 group-hover:text-gray-800 transition-colors">
-              Get personalized career guidance from experienced counselors to help you make informed decisions.
-            </p>
-            
-            {/* Enhanced button with hover effect */}
-            <div className="group-hover:shadow-lg">
-              <span onClick={openConsultationForm} className="inline-flex items-center text-orange-500 font-semibold group-hover:text-blue-600 transition-colors relative cursor-pointer">
-                <span>Book a Free Consultation</span>
-                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-[#0052CC] group-hover:w-full transition-all duration-300"></span>
-              </span>
-            </div>
-          </motion.div>
+          
 
           {/* Card 3: Skill Development */}
           <motion.div 
@@ -234,6 +193,51 @@ Partnered with top universities to bring you flexible, affordable, and recognize
               </span>
             </div>
           </motion.div>
+
+
+{/* Card 2: Career Counseling */}
+          <motion.div 
+            className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group relative overflow-hidden cursor-pointer"
+            variants={cardVariants}
+            whileHover={{
+              y: -5,
+              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+              transition: { duration: 0.3 }
+            }}
+            onClick={openConsultationForm}
+          >
+            {/* Enhanced background effects */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-200 to-orange-100 rounded-bl-full -z-10 opacity-70 group-hover:scale-125 transition-transform duration-500"></div>
+            <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-gradient-to-tr from-blue-200 to-blue-100 rounded-full -z-10 opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+            
+            {/* Enhanced icon with animation */}
+            <div className="bg-gradient-to-r from-orange-500 to-orange-400 p-4 w-16 h-16 rounded-lg mb-6 flex items-center justify-center text-white shadow-md relative overflow-hidden group-hover:scale-110 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-[#FF6B00] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+            </div>
+            
+            {/* Enhanced text with animation */}
+            <h3 className="text-2xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-[#0052CC] group-hover:from-[#FF6B00] group-hover:to-[#0052CC] transition-all duration-300">Career Counseling</h3>
+            <div className="h-1 w-16 bg-gradient-to-r from-orange-500 to-[#0052CC] rounded-full mb-3 group-hover:w-32 transition-all duration-500"></div>
+            
+            <p className="text-gray-600 mb-6 group-hover:text-gray-800 transition-colors">
+              Get personalized career guidance from experienced counselors to help you make informed decisions.
+            </p>
+            
+            {/* Enhanced button with hover effect */}
+            <div className="group-hover:shadow-lg">
+              <span onClick={openConsultationForm} className="inline-flex items-center text-orange-500 font-semibold group-hover:text-blue-600 transition-colors relative cursor-pointer">
+                <span>Book a Free Consultation</span>
+                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-[#0052CC] group-hover:w-full transition-all duration-300"></span>
+              </span>
+            </div>
+          </motion.div>
+
 
           {/* Card 4: Placement Support */}
           <motion.div 

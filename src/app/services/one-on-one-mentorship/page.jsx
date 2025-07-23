@@ -277,7 +277,7 @@ export default function OneOnOneMentorshipPage() {
               <Link href="/contact" className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors font-bold">
                 Apply for Mentorship
               </Link>
-              <Link href="/consultation" className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors">
+              <Link href="/contact" className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors">
                 Schedule a Free Consultation
               </Link>
             </div>

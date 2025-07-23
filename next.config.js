@@ -17,7 +17,8 @@ const nextConfig = {
       'svyasa.edu.in',
       'woxsen.edu.in',
       'www.nmims.edu',
-      'paruluniversity.ac.in'
+      'paruluniversity.ac.in',
+      'res.cloudinary.com'
     ],
   },
   webpack: (config) => {

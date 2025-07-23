@@ -12,9 +12,9 @@ import { trackMetaButtonClick, trackMetaConsultationRequest } from "./MetaPixel"
 const DesktopDropdown = ({ title, isOpen, toggleDropdown, items, handleNavigation }) => {
   return (
     <div className="relative">
-      <button 
+      <button
         onClick={toggleDropdown}
-        className={`border-transparent ${isOpen ? 'border-[#0052CC] opacity-80' : ''} hover:border-[#0052CC] inline-flex items-center px-1 pt-1 border-b-2 text-sm font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent hover:opacity-80 transition-opacity cursor-pointer`}
+        className={`border-transparent ${isOpen ? 'border-[#0052CC] opacity-80' : ''} hover:border-[#0052CC] inline-flex items-center px-1 pt-1 border-b-2 text-base font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent hover:opacity-80 transition-opacity cursor-pointer`}
       >
         {title}
         <svg 
@@ -33,7 +33,7 @@ const DesktopDropdown = ({ title, isOpen, toggleDropdown, items, handleNavigatio
             {items.map((item, index) => (
               <div 
                 key={index}
-                className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+                className="text-gray-700 block px-4 py-2 text-base hover:bg-gray-100 cursor-pointer"
                 onClick={(e) => { 
                   toggleDropdown();
                   handleNavigation(e, item.href);
@@ -100,16 +100,16 @@ const SectionHeader = ({ title }) => (
 );
 
 export default function Navbar() {
-  // Navigation items - reordered
+  // Navigation items - reordered (removed Courses and Universities)
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Courses", href: "/courses" },
-    { name: "Universities", href: "/universities" },
   ];
 
-  // Services dropdown items
+  // Services dropdown items (added Courses and Universities)
   const servicesItems = [
     { name: "All Services", href: "/services" },
+    { name: "Courses", href: "/courses" },
+    { name: "Universities", href: "/universities" },
     { name: "One-on-One Career Mentorship", href: "/services/one-on-one-mentorship" },
   ];
 
@@ -225,36 +225,19 @@ export default function Navbar() {
             <div className="hidden sm:flex sm:space-x-6 items-center">
               {/* Regular navigation items */}
               {navItems.map((item, index) => (
-                item.name === "Courses" || item.name === "Universities" || item.name === "Home" ? (
-                  <Link 
-                    key={index}
-                    href={item.href} 
-                    className="border-transparent hover:border-[#0052CC] inline-flex items-center px-1 pt-1 border-b-2 text-sm font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent hover:opacity-80 transition-opacity cursor-pointer"
-                    onClick={(e) => handleNavigation(e, item.href)}
-                  >
-                    {item.name}
-                  </Link>
-                ) : null
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="border-transparent hover:border-[#0052CC] inline-flex items-center px-1 pt-1 border-b-2 text-base font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent hover:opacity-80 transition-opacity cursor-pointer"
+                  onClick={(e) => handleNavigation(e, item.href)}
+                >
+                  {item.name}
+                </Link>
               ))}
-              
-              {/* AboutUs dropdown - moved to after Courses */}
-              <div ref={aboutDropdownRef}>
-                <DesktopDropdown 
-                  title="AboutUs"
-                  isOpen={isAboutDropdownOpen}
-                  toggleDropdown={() => {
-                    setIsAboutDropdownOpen(!isAboutDropdownOpen);
-                    setIsServicesDropdownOpen(false);
-                    setIsCareerDropdownOpen(false);
-                  }}
-                  items={aboutItems}
-                  handleNavigation={handleNavigation}
-                />
-              </div>
-              
-              {/* Services dropdown */}
+
+              {/* Services dropdown - moved to after Home */}
               <div ref={servicesDropdownRef}>
-                <DesktopDropdown 
+                <DesktopDropdown
                   title="Our Services"
                   isOpen={isServicesDropdownOpen}
                   toggleDropdown={() => {
@@ -263,6 +246,21 @@ export default function Navbar() {
                     setIsCareerDropdownOpen(false);
                   }}
                   items={servicesItems}
+                  handleNavigation={handleNavigation}
+                />
+              </div>
+
+              {/* AboutUs dropdown */}
+              <div ref={aboutDropdownRef}>
+                <DesktopDropdown
+                  title="AboutUs"
+                  isOpen={isAboutDropdownOpen}
+                  toggleDropdown={() => {
+                    setIsAboutDropdownOpen(!isAboutDropdownOpen);
+                    setIsServicesDropdownOpen(false);
+                    setIsCareerDropdownOpen(false);
+                  }}
+                  items={aboutItems}
                   handleNavigation={handleNavigation}
                 />
               </div>
@@ -285,7 +283,7 @@ export default function Navbar() {
               {/* ContactUs link - moved to end before button */}
               <Link 
                 href="/contact" 
-                className="border-transparent hover:border-[#0052CC] inline-flex items-center px-1 pt-1 border-b-2 text-sm font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent hover:opacity-80 transition-opacity cursor-pointer"
+                className="border-transparent hover:border-[#0052CC] inline-flex items-center px-1 pt-1 border-b-2 text-base font-bold bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent hover:opacity-80 transition-opacity cursor-pointer"
                 onClick={(e) => handleNavigation(e, "/contact")}
               >
                 ContactUs
@@ -328,52 +326,36 @@ export default function Navbar() {
         <div className="sm:hidden">
           <div className="pt-2 pb-3 space-y-1">
             {/* Home link */}
-            <a 
+            <a
               href="/"
-              className="block border-l-4 border-transparent hover:border-[#0052CC] pl-3 pr-4 py-2 hover:bg-gray-50 bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent text-base font-bold cursor-pointer"
+              className="block border-l-4 border-transparent hover:border-[#0052CC] pl-3 pr-4 py-2 hover:bg-gray-50 bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent text-lg font-bold cursor-pointer"
             >
               Home
             </a>
-            
-            {/* Courses link */}
-            <a
-              href="/courses"
-              className="block border-l-4 border-transparent hover:border-[#0052CC] pl-3 pr-4 py-2 hover:bg-gray-50 bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent text-base font-bold cursor-pointer"
-            >
-              Courses
-            </a>
-            
-            {/* Universities link */}
-            <a
-              href="/universities"
-              className="block border-l-4 border-transparent hover:border-[#0052CC] pl-3 pr-4 py-2 hover:bg-gray-50 bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent text-base font-bold cursor-pointer"
-            >
-              Universities
-            </a>
-            
-            {/* About Section Header - moved after Courses */}
-            <SectionHeader title="AboutUs" />
-            
-            {/* About items directly listed */}
-            {aboutItems.map((item, index) => (
-              <a 
-                key={`about-${index}`}
+
+            {/* Services Section Header - moved after Home */}
+            <SectionHeader title="Our Services" />
+
+            {/* Services items directly listed */}
+            {servicesItems.map((item, index) => (
+              <a
+                key={`service-${index}`}
                 href={item.href}
-                className="block border-l-4 border-transparent hover:border-[#0052CC] pl-6 pr-4 py-1 hover:bg-gray-50 text-gray-600 text-sm cursor-pointer"
+                className="block border-l-4 border-transparent hover:border-[#0052CC] pl-6 pr-4 py-1 hover:bg-gray-50 text-gray-600 text-base cursor-pointer"
               >
                 {item.name}
               </a>
             ))}
-            
-            {/* Services Section Header */}
-            <SectionHeader title="Our Services" />
-            
-            {/* Services items directly listed */}
-            {servicesItems.map((item, index) => (
-              <a 
-                key={`service-${index}`}
+
+            {/* About Section Header */}
+            <SectionHeader title="AboutUs" />
+
+            {/* About items directly listed */}
+            {aboutItems.map((item, index) => (
+              <a
+                key={`about-${index}`}
                 href={item.href}
-                className="block border-l-4 border-transparent hover:border-[#0052CC] pl-6 pr-4 py-1 hover:bg-gray-50 text-gray-600 text-sm cursor-pointer"
+                className="block border-l-4 border-transparent hover:border-[#0052CC] pl-6 pr-4 py-1 hover:bg-gray-50 text-gray-600 text-base cursor-pointer"
               >
                 {item.name}
               </a>
@@ -387,7 +369,7 @@ export default function Navbar() {
               <a 
                 key={`career-${index}`}
                 href={item.href}
-                className="block border-l-4 border-transparent hover:border-[#0052CC] pl-6 pr-4 py-1 hover:bg-gray-50 text-gray-600 text-sm cursor-pointer"
+                className="block border-l-4 border-transparent hover:border-[#0052CC] pl-6 pr-4 py-1 hover:bg-gray-50 text-gray-600 text-base cursor-pointer"
               >
                 {item.name}
               </a>
@@ -396,7 +378,7 @@ export default function Navbar() {
             {/* ContactUs link - moved to end before button */}
             <a
               href="/contact"
-              className="block border-l-4 border-transparent hover:border-[#0052CC] pl-3 pr-4 py-2 hover:bg-gray-50 bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent text-base font-bold cursor-pointer"
+              className="block border-l-4 border-transparent hover:border-[#0052CC] pl-3 pr-4 py-2 hover:bg-gray-50 bg-gradient-to-r from-[#0052CC] to-[#FF6B35] bg-clip-text text-transparent text-lg font-bold cursor-pointer"
             >
               ContactUs
             </a>
