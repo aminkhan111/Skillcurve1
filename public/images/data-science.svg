@@ -1,0 +1,15 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#F3F4F6"/>
+  <path d="M230 100C230 82.3269 215.673 68 198 68C180.327 68 166 82.3269 166 100C166 117.673 180.327 132 198 132C215.673 132 230 117.673 230 100Z" fill="#0052CC" opacity="0.2"/>
+  <circle cx="198" cy="100" r="10" fill="#0052CC"/>
+  <line x1="198" y1="100" x2="234" y2="136" stroke="#0052CC" stroke-width="3"/>
+  <line x1="198" y1="100" x2="162" y2="136" stroke="#0052CC" stroke-width="3"/>
+  <line x1="198" y1="100" x2="234" y2="64" stroke="#0052CC" stroke-width="3"/>
+  <line x1="198" y1="100" x2="162" y2="64" stroke="#0052CC" stroke-width="3"/>
+  <circle cx="234" cy="136" r="8" fill="#FF6B35"/>
+  <circle cx="162" cy="136" r="8" fill="#FF6B35"/>
+  <circle cx="234" cy="64" r="8" fill="#FF6B35"/>
+  <circle cx="162" cy="64" r="8" fill="#FF6B35"/>
+  <text x="122" y="190" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#0052CC">Data Science &amp; Machine Learning</text>
+  <text x="170" y="215" font-family="Arial, sans-serif" font-size="16" fill="#64748B">Bootcamp</text>
+</svg> 

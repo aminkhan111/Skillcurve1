@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" width="500" height="150">
+  <!-- Shield shape: adjusted to more closely match the reference -->
+  <path d="M75 10L10 42v55c0 30 29 50 65 50s65-20 65-50V42L75 10z" fill="#0052CC"/>
+  
+  <!-- Graph bars: adjusted to match reference proportions -->
+  <rect x="30" y="100" width="15" height="40" fill="white" />
+  <rect x="60" y="80" width="15" height="60" fill="white" />
+  <rect x="90" y="60" width="15" height="80" fill="white" />
+  
+  <!-- Upward arrow: refined to match reference curve -->
+  <path d="M35 65C45 50 60 45 90 50C75 60 65 70 85 100" stroke="white" stroke-width="7" fill="none" stroke-linecap="round"/>
+  
+  <!-- Text part with proper spacing -->
+  <text x="150" y="85" font-family="Arial, sans-serif" font-weight="bold" font-size="42">
+    <tspan fill="#0052CC">Skill</tspan><tspan fill="#FF6B00">Curve</tspan>
+  </text>
+</svg> 
