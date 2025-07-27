@@ -68,14 +68,35 @@ export default function UniversityLogosSection() {
       logo: "/images/university-logos/Manipal Logo.png",
       urlPath: "manipal"
     },
+<<<<<<< HEAD
      
+=======
+    {
+      name: "Jain University",
+      logo: "/images/university-logos/jain University logo.jpeg",
+      urlPath: "jain"
+    },
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
     {
       name: "LPU - Lovely Professional University",
       logo: "/images/university-logos/Lpu Logo.png",
       urlPath: "lpu"
     },
+<<<<<<< HEAD
     
     
+=======
+    {
+      name: "GLA University",
+      logo: "/images/university-logos/Wex University.png", // Using Wex University as a placeholder for GLA
+      urlPath: "gla"
+    },
+    {
+      name: "Amity University",
+      logo: "/images/university-logos/Amity Logo.png",
+      urlPath: "amity"
+    },
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
     {
       name: "Master Union",
       logo: "/images/university-logos/MasterUnion Logo.jpeg",

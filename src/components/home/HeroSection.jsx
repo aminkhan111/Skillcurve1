@@ -307,8 +307,13 @@ export default function HeroSection() {
             </h1>
             
             <p className="text-base md:text-lg mb-4 text-white font-medium max-w-xl drop-shadow-md">
+<<<<<<< HEAD
               Your Career, Supercharged
               Learn. Grow. Get Hired — with SkillCurve.
+=======
+              Access courses from top universities, get personalized career counseling, 
+              and receive placement support to reach your career goals.
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
             </p>
             
             {/* Enhanced Stats Section with more compact styling */}
@@ -319,7 +324,11 @@ export default function HeroSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
+<<<<<<< HEAD
                 >50+</motion.span>
+=======
+                >100+</motion.span>
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
                 <span className="text-xs text-white drop-shadow-sm">Courses</span>
               </div>
               <div className="text-center p-2 rounded-lg bg-white/10 backdrop-blur-sm shadow-lg">
@@ -431,14 +440,22 @@ export default function HeroSection() {
                     <h3 className="font-semibold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-200 drop-shadow-lg">Start Learning Today</h3>
                     <p className="text-white text-lg drop-shadow-md">Join thousands of successful graduates</p>
                     
+<<<<<<< HEAD
                     {/* <div className="mt-4 flex items-center">
+=======
+                    <div className="mt-4 flex items-center">
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
                       <div className="flex -space-x-2">
                         {[...Array(4)].map((_, i) => (
                           <div key={i} className={`w-8 h-8 rounded-full border-2 border-white bg-gradient-to-r ${i % 2 === 0 ? 'from-blue-500 to-blue-600' : 'from-orange-400 to-orange-500'}`}></div>
                         ))}
                       </div>
                       <span className="ml-4 text-sm text-white drop-shadow-sm">50+ enrolled this week</span>
+<<<<<<< HEAD
                     </div> */}
+=======
+                    </div>
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
                   </motion.div>
                 </div>
               </motion.div>

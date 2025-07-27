@@ -174,12 +174,21 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               <div>
+<<<<<<< HEAD
                 <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#0052CC] group-hover:to-[#FF6B00] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Santosh JT</h4>
                 <p className="text-gray-700"> MCA </p>
               </div>
             </div>
             <p className="text-gray-700 relative z-10">
               "I was skeptical about online degrees, I enrolled for MCA program with the help of SkillCurve ,but Manipal changed my mind.The course content was in-depth, the LMS was easy to use, and mentors were very responsive. I transitioned into a software development role mid-course"
+=======
+                <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#0052CC] group-hover:to-[#FF6B00] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Praveen Kumar</h4>
+                <p className="text-gray-700">Data Scientist</p>
+              </div>
+            </div>
+            <p className="text-gray-700 relative z-10">
+              "The Data Science course was exactly what I needed to transition into a new career. The career counseling helped me prepare for interviews, and I landed my dream job within weeks of completing the course."
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
             </p>
             <div className="flex mt-4">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -213,12 +222,21 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               <div>
+<<<<<<< HEAD
                 <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#FF6B00] group-hover:to-[#0052CC] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Ritu Agarwal</h4>
                 <p className="text-gray-700">MBA</p>
               </div>
             </div>
             <p className="text-gray-700 relative z-10">
               "The online MBA from Manipal was everything I needed — flexibility, real-time support, and practical knowledge. Even while managing a full-time job, I could complete the course smoothly. The industry projects truly added value."
+=======
+                <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#FF6B00] group-hover:to-[#0052CC] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Sumit Kumar</h4>
+                <p className="text-gray-700">Full-Stack Developer</p>
+              </div>
+            </div>
+            <p className="text-gray-700 relative z-10">
+              "I was stuck in my career until I found SkillCurve. Their web development course was comprehensive and practical, and the placement support helped me secure a position at a top tech company."
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
             </p>
             <div className="flex mt-4">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -252,12 +270,21 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               <div>
+<<<<<<< HEAD
                 <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#0052CC] group-hover:to-[#FF6B00] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Sneha Borkar</h4>
                 <p className="text-gray-700">BBA</p>
               </div>
             </div>
             <p className="text-gray-700 relative z-10">
               "Being from a small town, access to quality education was always tough. The online BBA from Manipal gave me access to top-notch faculty, recorded classes, and real-world business insights. I feel more confident and career-ready now."
+=======
+                <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#0052CC] group-hover:to-[#FF6B00] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Jessica Patel</h4>
+                <p className="text-gray-700">Marketing Director</p>
+              </div>
+            </div>
+            <p className="text-gray-700 relative z-10">
+              "The MBA program at SkillCurve gave me the business acumen I needed for a leadership role. The counselors provided valuable guidance, helping me navigate my career path with confidence."
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
             </p>
             <div className="flex mt-4">
               {[1, 2, 3, 4, 5].map((star) => (

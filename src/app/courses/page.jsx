@@ -693,6 +693,7 @@ export default function CoursesPage() {
           <div className="space-y-4 md:space-y-6">
             {[
               {
+<<<<<<< HEAD
                 question: "What are the eligibility criteria?",
                 answer: "Eligibility varies by program, but generally requires a 10+2 qualification for undergraduate programs.."
               },
@@ -707,6 +708,22 @@ export default function CoursesPage() {
               {
                 question: "What career support services are available to students?",
                 answer: "We offer comprehensive career services including resume building, interview preparation, networking events, industry connections, and job placement assistance."
+=======
+                question: "What are the eligibility requirements for international students?",
+                answer: "International students need to meet the same academic requirements as domestic students. Additionally, they need to demonstrate English proficiency through TOEFL, IELTS, or other recognized tests."
+              },
+              {
+                question: "Is financial aid available for these programs?",
+                answer: "Yes, we offer various scholarships, grants, and financial aid packages based on merit and need. Our financial aid office can help you explore all available options."
+              },
+              {
+                question: "Can I transfer credits from another institution?",
+                answer: "Yes, we accept transfer credits from accredited institutions. The number of credits that can be transferred depends on the program and the courses you've taken."
+              },
+              {
+                question: "What career support services are available to students?",
+                answer: "We offer comprehensive career services including resume building, interview preparation, networking events, industry connections, and job placement assistance."
+>>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
               }
             ].map((faq, index) => (
               <motion.div 
