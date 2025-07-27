@@ -307,13 +307,8 @@ export default function HeroSection() {
             </h1>
             
             <p className="text-base md:text-lg mb-4 text-white font-medium max-w-xl drop-shadow-md">
-<<<<<<< HEAD
               Your Career, Supercharged
               Learn. Grow. Get Hired — with SkillCurve.
-=======
-              Access courses from top universities, get personalized career counseling, 
-              and receive placement support to reach your career goals.
->>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
             </p>
             
             {/* Enhanced Stats Section with more compact styling */}
