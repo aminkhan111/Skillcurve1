@@ -174,7 +174,6 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               <div>
-<<<<<<< HEAD
                 <h4 className="font-semibold group-hover:bg-gradient-to-r group-hover:from-[#0052CC] group-hover:to-[#FF6B00] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Santosh JT</h4>
                 <p className="text-gray-700"> MCA </p>
               </div>

@@ -10,9 +10,6 @@ export default function UniversitiesPage() {
   const [activeFilter, setActiveFilter] = useState("all");
   
   // University data organized by Indian states
-<<<<<<< HEAD
- 
-=======
   const universities = [
     {
       id: 1,
@@ -175,7 +172,7 @@ export default function UniversitiesPage() {
     { id: "westbengal", label: "West Bengal" }
   ];
 
->>>>>>> a56d7d6a8bde50c25d9967c419f234290beafc39
+
   return (
     <main className="bg-slate-50">
       {/* Hero Section */}
@@ -376,15 +373,6 @@ export default function UniversitiesPage() {
       </section>
 
       {/* Filter Navigation */}
-<<<<<<< HEAD
-      
-
-      {/* Featured University */}
-       
-
-      {/* University Grid */}
-      
-=======
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
